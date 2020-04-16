@@ -1,0 +1,16 @@
+- multer - for uploading images as buffer
+- sharp - for manipulating images
+- compression - for compressing server responses
+- bunyan - for managing log systems
+- helmet - for security to website
+- pm2 - for deployment to a server. A process manager that comes with tools to deploy project to any host
+
+//TIPS
+- Cache requests
+- Avoid using synchronous functions
+- Avoid using consle.log()  in production
+- handle errors appropriatel
+- Use a cluster module to distribute requests to multiple processes
+- use nodejs built in cluster model to ensure multi-thread processes
+- run npm audit to check for issues with packages and fix them
+
