@@ -4,6 +4,16 @@
 - bunyan - for managing log systems
 - helmet - for security to website
 - pm2 - for deployment to a server. A process manager that comes with tools to deploy project to any host
+- bcrypt - for hashing and unhashing passwords
+- body-parser - for reading req.body,
+- connect-mongo - for storing session in db 
+- cookie-parser, express-session - for session and   cookies
+- dotenv - for env variables
+- email-validator - for emails
+- http-errors - for handling errors
+- passport - for authentication, authorization, login with social media etx.
+- passport-local - works with passport
+
 
 //TIPS
 - Cache requests
