@@ -36,7 +36,24 @@ module.exports = (config) => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser());
 
-  //Adding session
+  //Differentiate Env and Prod
+  if(app.get('env') =='production'){
+    app.set('trust proxy', 'loopback');
+       //Adding session for Prod
+  app.use(session({
+    secret: 'anoda very secret 343243532',
+    name:'sessionId',
+    proxy: true,
+    cookie: {secure: true},
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    })
+  }));
+  }else{
+
+      //Adding session
   app.use(session({
     secret: 'very secret 343243532',
     resave: true,
@@ -45,6 +62,9 @@ module.exports = (config) => {
       mongooseConnection: mongoose.connection
     })
   }));
+  }
+
+
 //Initializing session
   app.use(auth.initialize);
   app.use(auth.session);
